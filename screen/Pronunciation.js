@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import React from 'react'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
-// import * as Speech from "expo-speech";
+import speakGreeting from '../Components/speakGreeting'
 
 export default function Pronunciation({ navigation }) {
   const Punctua = [
@@ -45,16 +45,8 @@ export default function Pronunciation({ navigation }) {
       name: 'Angular Bracket',
     },
   ]
-  const speakGreeting = (item) => {
-    const greeting = `${item}`;
-    const options = {
-      voice: "com.apple.speech.synthesis.voice.Fred",
-      pitch: 1.5,
-      rate: 0.7,
-    };
-
-    // Speech.speak(greeting, options);
-  };
+ 
+  
   return (
     <View
       style={{
@@ -154,7 +146,7 @@ export default function Pronunciation({ navigation }) {
                       color: '#523275',
                     }}
                   >
-                    {item.barket}
+                    {"<>"}
                   </Text>
                 </View>
 

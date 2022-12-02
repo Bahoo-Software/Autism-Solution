@@ -2,6 +2,7 @@
 import { View, Text, Pressable, FlatList , Image} from 'react-native'
 import React from 'react'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import speakGreeting from '../Components/speakGreeting'
 // import * as Speech from "expo-speech";
 
 export default function Sentencebetweenfiveword({navigation}) {
@@ -25,16 +26,6 @@ export default function Sentencebetweenfiveword({navigation}) {
     },
    
   ]
-  const speakGreeting = (item) => {
-    const greeting = `${item}`;
-    const options = {
-      voice: "com.apple.speech.synthesis.voice.Fred",
-      pitch: 1.5,
-      rate: 0.7,
-    };
-
-    // Speech.speak(greeting, options);
-  };
   return (
     <View
     style={{
