@@ -56,9 +56,10 @@ export default function Guide({ navigation }) {
       />
       <Text
         style={{
-          fontSize: 15,
-          color: 'black',
+          fontSize: 16,
+          color: '#000000',
           alignSelf: 'center',
+          fontWeight:"550"
         }}
       >
         Guideline
@@ -73,13 +74,15 @@ export default function Guide({ navigation }) {
           style={{
             fontSize: 22,
             fontWeight: 'bold',
+            color:"#000000"
           }}
         >
           Note !
         </Text>
         <Text
           style={{
-            fontSize: 20,
+            fontSize: 18,
+            color:"#000000"
           }}
         >
           Lorem Ipsum is simply dummy text of the printing and typesetting

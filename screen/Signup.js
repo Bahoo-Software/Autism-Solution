@@ -1,8 +1,8 @@
 /** @format */
-import React, { useState } from "react";
+import React, {useState} from 'react';
 import {
   SafeAreaView,
-  Image,  
+  Image,
   StyleSheet,
   FlatList,
   View,
@@ -11,19 +11,27 @@ import {
   StatusBar,
   TextInput,
   TouchableOpacity,
+  ScrollView,
   Dimensions,
-} from "react-native";
-import FormInput from "../Components/FormInput";
-import LoginBtn from "../Components/Loginbtn";
-import Entypo from "react-native-vector-icons/Entypo";
-import Loader from "../Components/Loader";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons"
-const Signup = ({ navigation }) => {
+  Keyboard
+} from 'react-native';
+import FormInput from '../Components/FormInput';
+import LoginBtn from '../Components/Loginbtn';
+import Entypo from 'react-native-vector-icons/Entypo';
+import Loader from '../Components/Loader';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+const Signup = ({navigation}) => {
   const [email, setEmail] = React.useState();
   const [password, setPassword] = React.useState();
   const [username, setusername] = React.useState();
+  const [btn,Setbtn]=useState(false)
   const [loading, setLoading] = useState(false);
-
+  Keyboard.addListener('keyboardDidShow',()=>{
+    Setbtn(true)
+  })
+  Keyboard.addListener('keyboardDidHide',()=>{
+    Setbtn(false)
+  })
   // const API = () => {
   //   // console.log(`This is Email:${email}`);
 
@@ -82,84 +90,67 @@ const Signup = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: "white",
-      }}
-    >
+        backgroundColor: 'white',
+      }}>
       <View
         style={{
-          width: "100%",
-          height: "17%",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <View
-          style={{
-            width: "95%",
-            height: 30,
-          }}
-        >
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <MaterialIcons
-            name="arrow-back-ios"
-            style={{
-              marginLeft:"3%"
-            }}
-            size={30}
-            />
-          </TouchableOpacity>
-        </View>
+          marginTop: 10,
+          width: '90%',
+          height: 30,
+          alignSelf: 'center',
+        }}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <MaterialIcons name="arrow-back-ios" size={30} />
+        </TouchableOpacity>
+      </View>
+      <View
+        style={{
+          width: '100%',
+          height: '17%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <Text
           style={{
             fontSize: 28,
-            color: "#3E4A59",
-            fontWeight: "800",
-          }}
-        >
+            color: '#3E4A59',
+            fontWeight: '800',
+          }}>
           Get started now
         </Text>
         <View
           style={{
-            height: "3%",
+            height: '3%',
           }}
         />
       </View>
-
-      <View
-        style={{
-          height: "74%",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
+      <ScrollView  style={{flexGrow:1}}>
         <FormInput
-
-          onChangeText={(username) => setusername(username)}
+          onChangeText={username => setuserName(username)}
           labelValue={username}
-          placeholder="username"
+          placeholder="Username"
           autoCapitalize="none"
           autocorrect={false}
         />
         <FormInput
-          onChangeText={(userEmail) => setEmail(userEmail)}
+          onChangeText={value => setEmail(value)}
           labelValue={email}
           placeholder="Email"
           autoCapitalize="none"
           autocorrect={false}
         />
+
         <FormInput
-          onChangeText={(userPassword) => setPassword(userPassword)}
+          onChangeText={value => setPassword(value)}
           labelValue={password}
-          secureTextEntry={true}
-          placeholder="Password"
+          placeholder="password"
+          autoCapitalize="none"
+          autocorrect={false}
         />
-       
-        <View
-          style={{
-            height: "60%",
-          }}
-        />
-        <TouchableOpacity
+      </ScrollView>
+      <View>{
+        btn?null:
+      <TouchableOpacity
           style={{
             width: "100%",
             height: 46,
@@ -176,7 +167,8 @@ const Signup = ({ navigation }) => {
             name="Signup"
           />
         </TouchableOpacity>
-      </View>
+}
+        </View>
     </View>
   );
 };

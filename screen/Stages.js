@@ -56,8 +56,8 @@ export default function Stages({ navigation }) {
       />
       <Text
         style={{
-            fontWeight:"bold",
-          fontSize: 18,
+            fontWeight:"500",
+          fontSize: 16,
           color: 'black',
           alignSelf:"center",
 

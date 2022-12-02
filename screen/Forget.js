@@ -67,25 +67,17 @@ const Forget = ({ navigation }) => {
         backgroundColor: 'white',
       }}
     >
-      <View
-        style={{
-          height: '2%',
-        }}
-      />
-      <View
+        <View
         style={{
           width: '95%',
-
-          paddingLeft: '3%',
           height: 30,
         }}
       >
       <TouchableOpacity onPress={() => navigation.goBack()}>
             <MaterialIcons
             name="arrow-back-ios"
-            style={{
-              marginLeft:"3%"
-            }}
+           
+            
             size={30}
             />
           </TouchableOpacity>
@@ -101,7 +93,7 @@ const Forget = ({ navigation }) => {
         <Text
           style={{
             fontSize: 28,
-            color: '#3E4A59',
+            color: '#0165FF',
             fontWeight: '800',
           }}
         >
@@ -110,6 +102,13 @@ const Forget = ({ navigation }) => {
      
        
       </View>
+      <View
+        style={{
+          height: '2%',
+        }}
+      />
+    
+    
 
       <View
         style={{
@@ -129,13 +128,7 @@ const Forget = ({ navigation }) => {
           placeholder="email"
           autoCapitalize="none"
           autocorrect={false}
-        />
-
-        <View
-          style={{
-            height: '24%',
-          }}
-        />
+        />     
         <TouchableOpacity
           style={{
             width: '100%',

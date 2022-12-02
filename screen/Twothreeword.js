@@ -140,7 +140,7 @@ export default function Twothreeword({navigation}) {
                       />
                       <Text
                         style={{
-                          fontSize: 18,
+                          fontSize: 20,
                           color:  'black',
                         }}
                       >
@@ -160,12 +160,14 @@ export default function Twothreeword({navigation}) {
                     borderRadius: 8,
                     borderColor: '#523275',
                     height: '80%',
+                    justifyContent:"center",
+                    alignItems:"center"
                   }}
                 >
                   <Image
                     style={{
-                      height: '100%',
-                      width: '100%',
+                      height: 31,
+                      width: 30,
                     }}
                     source={require('../assets/Speaker.png')}
                   />

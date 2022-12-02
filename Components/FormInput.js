@@ -9,38 +9,18 @@ const FormInput = ({
 }) => {
 
   return (
-    <View style={styles.inputContainer}>
+    <View style={{marginBottom:10,width:'90%',alignSelf:'center',}}>
       <TextInput
-        value={labelValue}
-        numberOfLines={1}
-        placeholder={placeholderText}
-        placeholderTextColor="#666"
-        {...rest}
-      />
-    </View>
+       style={{borderWidth:1,borderRadius:10,borderColor:'#9A9A9A',color:"#828282"}}
+       value={labelValue}
+       numberOfLines={1}
+       placeholder={placeholderText}
+       placeholderTextColor="#828282"
+       {...rest}
+       />
+       </View>
   );
 };
 
 export default FormInput;
 
-const styles = StyleSheet.create({
-  inputContainer: {
-    height: 46,
-    width: "90%",
-    margin: 12,
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
-    borderColor: "#8B959A",
-  },
-
-  input: {
-    padding: 10,
-    flex: 1,
-    fontSize: 16,
-
-    color: "#333",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});

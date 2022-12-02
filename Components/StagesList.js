@@ -92,7 +92,7 @@ const StagesList = ({ navigation }) => {
                     >
                       <Text
                         style={{
-                          fontSize: 20,
+                          fontSize: 16,
                           color: index == select ? 'white' : '#523275',
                         }}
                       >
@@ -105,7 +105,7 @@ const StagesList = ({ navigation }) => {
                       />
                       <Text
                         style={{
-                          fontSize: 18,
+                          fontSize: 16,
                           color: index == select ? 'white' : 'black',
                         }}
                       >
@@ -121,7 +121,7 @@ const StagesList = ({ navigation }) => {
                     >
                       <MaterialIcons
                         name="arrow-forward-ios"
-                        size={27}
+                        size={24}
                         style={{
                           marginRight: -10,
                         }}

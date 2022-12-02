@@ -66,14 +66,7 @@ const Login = ({ navigation }) => {
           height: '2%',
         }}
       />
-      <View
-        style={{
-          width: '95%',
-
-          paddingLeft: '3%',
-          height: 30,
-        }}
-      ></View>
+   
       <View
         style={{
           width: '100%',
@@ -118,11 +111,7 @@ const Login = ({ navigation }) => {
           source={require('../Images/Login.png')}
         />
       </View>
-      <View
-        style={{
-          height: '7%',
-        }}
-      />
+      
       <View
         style={{
           height: '35%',
@@ -158,8 +147,8 @@ const Login = ({ navigation }) => {
           >
             <Text
               style={{
-                fontSize: 15,
-                color: '#003399',
+                fontSize: 14,
+                color: '#0165FF',
                 position: 'absolute',
                 right: 0,
               }}
@@ -187,7 +176,7 @@ const Login = ({ navigation }) => {
           <LoginBtn
             color="#0165FF"
             textcolor="#fff"
-            textfontsize={23}
+            textfontsize={18}
             name="Login"
           />
         </TouchableOpacity>
@@ -196,7 +185,7 @@ const Login = ({ navigation }) => {
       <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
         <Text
           style={{
-            fontSize: 15,
+            fontSize: 14,
             color: '#003399',
             marginTop: '4%',
             alignSelf: 'center',

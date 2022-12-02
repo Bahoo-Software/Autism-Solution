@@ -142,7 +142,7 @@ export default function Pronunciation({ navigation }) {
                 >
                   <Text
                     style={{
-                      fontSize: 20,
+                      fontSize: 16,
                       color: '#523275',
                     }}
                   >
@@ -152,7 +152,7 @@ export default function Pronunciation({ navigation }) {
 
                 <Text
                   style={{
-                    fontSize: 20,
+                    fontSize: 14,
                     color: '#000000',
                   }}
                 >
@@ -165,12 +165,14 @@ export default function Pronunciation({ navigation }) {
                     borderRadius: 8,
                     borderColor: '#523275',
                     height: '80%',
+                    justifyContent:"center",
+                    alignItems:"center"
                   }}
                 >
                   <Image
                     style={{
-                      height: '100%',
-                      width: '100%',
+                      height: 31,
+                      width: 31,
                     }}
                     source={require('../assets/Speaker.png')}
                   />

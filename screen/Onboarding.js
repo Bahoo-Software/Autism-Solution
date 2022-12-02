@@ -79,7 +79,7 @@ export default function Onboarding({navigation}) {
         <LoginBtn
           color="#0165FF"
           textcolor="#fff"
-          textfontsize={23}
+          textfontsize={18}
           name="Start"
         />
       </Pressable>

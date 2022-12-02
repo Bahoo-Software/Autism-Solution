@@ -21,8 +21,8 @@ const Mainscreen = ({ navigation }) => {
       <Text
         style={{
           fontSize: 30,
-          fontWeight: '900',
-          color: '#000000',
+          fontWeight: '600',
+          color: '#2D2D2D',
           textAlign: 'center',
         }}
       >
@@ -32,8 +32,8 @@ const Mainscreen = ({ navigation }) => {
       <Text
         style={{
           fontSize: 30,
-          fontWeight: '900',
-          color: '#000000',
+          fontWeight: '600',
+          color: '#2D2D2D',
           textAlign: 'center',
         }}
       >
@@ -98,6 +98,9 @@ const Mainscreen = ({ navigation }) => {
             <Text
               style={{
                 fontSize: 20,
+                color: 'black',
+
+
               }}
             >
               Stages Level
