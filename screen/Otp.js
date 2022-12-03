@@ -107,12 +107,9 @@ import OTPTextView from "react-native-otp-textinput";
 import LoginBtn from "../Components/Loginbtn";
 
 
-const Otp=()=>{
+const Otp=({navigation})=>{
 
-  const API1 = ({ navigation }) => {
   
-  
-  };
   
     return (
         <>

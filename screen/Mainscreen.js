@@ -179,7 +179,7 @@ const Mainscreen = ({ navigation }) => {
         />
         <Pressable
 
-        // onPress={() => navigation.navigate("ParagraphReading")}
+        onPress={() => navigation.navigate("Quz")}
         >
           <View
             style={{
