@@ -5,6 +5,8 @@ const FormInput = ({
   labelValue,
   placeholderText,
   marginTo,
+  Status,
+  limit,
   ...rest
 }) => {
 
@@ -14,8 +16,11 @@ const FormInput = ({
        style={{borderWidth:1,borderRadius:10,borderColor:'#9A9A9A',color:"#828282"}}
        value={labelValue}
        numberOfLines={1}
+       editable={Status}
        placeholder={placeholderText}
+       maxLength={limit}
        placeholderTextColor="#828282"
+      //  disableFullscreenUI={true}
        {...rest}
        />
        </View>

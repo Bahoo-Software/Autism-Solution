@@ -18,6 +18,7 @@ import Punctuation from './screen/Pronunciation';
 import Twothreeword from './screen/Twothreeword';
 import Sentencebetweenfiveword from './screen/Sentencebetweenfiveword';
 import Pronunciation from './screen/Pronunciation';
+import Otp from './screen/Otp';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -27,8 +28,9 @@ function App() {
         <Stack.Navigator  screenOptions={{headerShown:false}}>
           <Stack.Screen name="Onboarding" component={Onboarding} />
           <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Forget" component={Forget} />
+          <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="Otp" component={Otp} />
           <Stack.Screen name="Mainscreen" component={Mainscreen} />
           <Stack.Screen name="Guide" component={Guide} />
           <Stack.Screen name="Stages" component={Stages} />
