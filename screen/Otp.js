@@ -91,7 +91,7 @@
 //     },
 //   });
 
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -102,14 +102,89 @@ import {
   TouchableOpacity,
 } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons"
-
+import axios from "axios";
 import OTPTextView from "react-native-otp-textinput";
 import LoginBtn from "../Components/Loginbtn";
+import Url from '../Url.json'
+const Otp=({route,navigation})=>{
+  const [SystemOtp,SetSystemOtp]=useState('')
+  const [InputOtp,SetInputOtp]=useState('')
+const {Email,username,password}=route.params
+// console.log(Email);
+const Signup=()=>{
+var data = JSON.stringify({
+  "email": Email,
+  "username": username,
+  "password": password
+});
 
+var config = {
+  method: 'post',
+  url: `${Url.baseurl}Signup`,
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
 
-const Otp=({navigation})=>{
+axios(config)
+.then(function (response) {
+  if(response.data.status==true){
+    navigation.navigate("Mainscreen")
+  }else{
+    alert("Something Went Wrong")
+  }
 
-  
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+}
+const Send=()=>{
+var data = JSON.stringify({
+"email": Email
+});
+
+var config = {
+method: 'post',
+url: `${Url.baseurl}VarifyEmail`,
+headers: { 
+  'Content-Type': 'application/json'
+},
+data : data
+};
+
+axios(config)
+.then(function (response) {
+  // console.log();
+  if(response.data.status==false){
+    alert("Please Try To connect this email :muhammadshiraz492@gmail.com")
+  }else{
+
+    SetSystemOtp(response.data.otp);
+  }
+
+// console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+console.log(error);
+});
+
+}
+React.useEffect(()=>{
+  Send()
+},[])
+
+ const onDone=()=>{
+ if(SystemOtp==InputOtp){
+  // alert("Sccuess")
+  Signup()
+ }else{
+  alert("Please Enter Correct Otp")
+
+ }
+ }
   
     return (
         <>
@@ -138,9 +213,12 @@ const Otp=({navigation})=>{
         <OTPTextView
           ref={(e) => (this.input1 = e)}
           containerStyle={styles.textInputContainer}
-          handleTextChange={(text) => console.log(text)}
+          handleTextChange={(text) => SetInputOtp(text)}
           inputCount={4}
+          tintColor={"#0165FF"}
           keyboardType="numeric"
+          
+          
 
         />
 
@@ -150,6 +228,7 @@ const Otp=({navigation})=>{
 
           onPress={() => {
             // this.API1();
+            Send()
           }}
         >
           <View
@@ -185,15 +264,15 @@ const Otp=({navigation})=>{
           }}
           onPress={() => {
             // this.API();
-
-            navigation.navigate("Login2");
+            onDone()
+            // navigation.navigate("Login2");
           }}
         >
           <LoginBtn
-            color="# b"
+            color="#0165FF"
             textcolor="#fff"
             textfontsize={18}
-            name="Login"
+            name="Next"
           />
         </TouchableOpacity>
 

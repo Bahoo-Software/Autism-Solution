@@ -1,4 +1,4 @@
-import {View, Text, Pressable, Image} from 'react-native';
+import {View, Text, Pressable, Image, FlatList, Dimensions} from 'react-native';
 import React, {useState} from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import LoginBtn from '../Components/Loginbtn';
@@ -14,6 +14,8 @@ import speakGreeting from '../Components/speakGreeting';
 const Vocalization = ({navigation}) => {
   const [StartRecord, SetStart] = useState(false);
   const [Correct,Setcorrect]=useState(false)
+  const width=Dimensions.get('screen').width
+  const Data=[1,2,3]
   React.useEffect(() => {
     Voice.onSpeechStart = onSpeechStartHandler;
     Voice.onSpeechEnd = onSpeechEndHandler;
@@ -40,6 +42,8 @@ const Vocalization = ({navigation}) => {
     if("MANGO"==value.toUpperCase()){
         // alert("Correct")
         Setcorrect(true)
+    }else{
+      alert("your Voice is not recongize")
     }
     // console.log('speech result handler', e);
   };
@@ -68,70 +72,80 @@ const Vocalization = ({navigation}) => {
         flex: 1,
         paddingTop: 10,
         backgroundColor: '#fff',
-        alignItems: 'center',
       }}>
-      <View
+   <FlatList 
+    data={Date}
+    horizontal
+    pagingEnabled
+   renderItem={({item})=>(
+    <View>
+    <View
+    style={{
+      width:width-20,
+      alignSelf: 'center',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      
+    }}>
+    <Pressable onPress={() => navigation.goBack()}>
+      <MaterialIcons name="arrow-back-ios" size={30} />
+    </Pressable>
+    <Text style={{fontSize: 20, fontWeight: 'bold', color: '#000000'}}>
+      Vocalization
+    </Text>
+    <Pressable
+      style={{
+        borderRadius: 8,
+        borderColor: '#523275',
+        justifyContent: 'center',
+        alignItems: 'center',
+        left:5
+      }}
+      onPress={() => speakGreeting('Mango')}>
+      <Image
         style={{
-          width: '95%',
-          alignSelf: 'center',
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-        }}>
-        <Pressable onPress={() => navigation.goBack()}>
-          <MaterialIcons name="arrow-back-ios" size={30} />
-        </Pressable>
-        <Text style={{fontSize: 20, fontWeight: 'bold', color: '#000000'}}>
-          Vocalization
-        </Text>
-        <Pressable
-          style={{
-            borderRadius: 8,
-            borderColor: '#523275',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-          onPress={() => speakGreeting('Mango')}>
-          <Image
-            style={{
-              height: 31,
-              width: 30,
-            }}
-            source={require('../assets/Speaker.png')}
-          />
-        </Pressable>
-      </View>
-      <View
-        style={{
-          flexGrow: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: '100%',
-        }}>
-        <View style={{justifyContent: 'center'}}>
-          <Image source={require('../assets/mango.png')} />
-        </View>
-        <View style={{height: 130, justifyContent: 'center'}}>
-          <Pressable onPress={StartRecord ? OnStopRecord : OnStartRecord}>
-            {StartRecord ? <VoiceILiseningVectorcon /> : <VoiceIcon />}
-          </Pressable>
-        </View>
-        <Pressable
-          style={{
-            width: '100%',
-            height: 46,
-            alignItems: 'center',
-            top: 60,
-          }}
-          onPress={{}}>
-          <LoginBtn
-            color={Correct?"#523275":"#8B8080"}
-            textcolor={Correct?"#fff":"#000"}
-            textfontsize={18}
-            name="Next"
-          />
-        </Pressable>
-      </View>
+          height: 31,
+          width: 30,
+        }}
+        source={require('../assets/Speaker.png')}
+      />
+    </Pressable>
+  </View>
+  <View
+    style={{
+      flexGrow: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: width,
+    }}>
+    <View style={{justifyContent: 'center'}}>
+      <Image source={require('../assets/mango.png')} />
+    </View>
+    <View style={{height: 130, justifyContent: 'center'}}>
+      <Pressable onPress={StartRecord ? OnStopRecord : OnStartRecord}>
+        {StartRecord ? <VoiceILiseningVectorcon /> : <VoiceIcon />}
+      </Pressable>
+    </View>
+    <Pressable
+      style={{
+        width: '100%',
+        height: 46,
+        alignItems: 'center',
+        top: 60,
+      }}
+      onPress={{}}>
+      <LoginBtn
+        color={Correct?"#523275":"#8B8080"}
+        textcolor={Correct?"#fff":"#000"}
+        textfontsize={18}
+        name="Next"
+      />
+    </Pressable>
+  </View>
+  </View>
+   )}
+   />
     </View>
   );
 };

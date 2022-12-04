@@ -74,7 +74,7 @@ const Signup = ({navigation}) => {
       </View>
       <ScrollView  style={{flexGrow:1}}>
         <FormInput
-          onChangeText={username => setuserName(username)}
+          onChangeText={username => setusername(username)}
           labelValue={username}
           placeholder="Username"
           autoCapitalize="none"
@@ -107,7 +107,11 @@ const Signup = ({navigation}) => {
           }}
           onPress={() => {
             // API();
-            navigation.navigate("Otp")
+            navigation.navigate("Otp",{
+              Email:email,
+              username:username,
+              password:password
+            })
           }}
         >
           <LoginBtn
