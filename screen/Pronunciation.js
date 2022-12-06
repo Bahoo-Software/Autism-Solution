@@ -6,46 +6,38 @@ import {
   Pressable,
   Image,
 } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import speakGreeting from '../Components/speakGreeting'
-
+import Url from '../Url.json';
+import axios from 'axios';
 export default function Pronunciation({ navigation }) {
-  const Punctua = [
-    {
-      barket: '< >',
-      name: 'Angular Bracket',
-    },
-    {
-      barket: '< >',
-      name: 'Angular Bracket',
-    },
-    {
-      barket: '< >',
-      name: 'Angular Bracket',
-    },
-    {
-      barket: '< >',
-      name: 'Angular Bracket',
-    },
-    {
-      barket: '< >',
-      name: 'Angular Bracket',
-    },
-    {
-      barket: '< >',
-      name: 'Angular Bracket',
-    },
-    {
-      barket: '< >',
-      name: 'Angular Bracket',
-    },
-    {
-      barket: '< >',
-      name: 'Angular Bracket',
-    },
-  ]
- 
+  const [Punctua,SetPunctua]=useState([])
+  const GetData = () => {
+    // var data = JSON.stringify({
+    //   Category: 'ThreeWords',
+    // });
+
+    var config = {
+      method: 'get',
+      url: `${Url.baseurl}Product/${'Pronunciation'}`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        SetPunctua(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  React.useEffect(() => {
+    GetData();
+  });
   
   return (
     <View
@@ -102,7 +94,7 @@ export default function Pronunciation({ navigation }) {
         renderItem={({ item, index }) => (
           <View>
             <Pressable onPress={() => {
-              speakGreeting(item.name);
+              speakGreeting(item.Name);
 
             }}>
               <View
@@ -146,7 +138,7 @@ export default function Pronunciation({ navigation }) {
                       color: '#523275',
                     }}
                   >
-                    {"<>"}
+                    {item.PronunSymbol}
                   </Text>
                 </View>
 
@@ -156,7 +148,7 @@ export default function Pronunciation({ navigation }) {
                     color: '#000000',
                   }}
                 >
-                  {item.name}
+                  {item.Name}
                 </Text>
                 {/* <Speaker/> */}
                 <View

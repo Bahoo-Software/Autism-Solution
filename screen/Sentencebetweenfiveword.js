@@ -1,31 +1,40 @@
 
 import { View, Text, Pressable, FlatList , Image} from 'react-native'
-import React from 'react'
+import React,{useState} from 'react'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import speakGreeting from '../Components/speakGreeting'
 // import * as Speech from "expo-speech";
-
+import Url from '../Url.json';
+import axios from 'axios';
 export default function Sentencebetweenfiveword({navigation}) {
 
-  const Two = [
-    {
-    
-      name: 'I will wait for you.',
-    },
-    {
-    
-      name:"Will they go with you?"
-    },
-    {
-     
-      name: 'I will wait for you.',
-    },
-    {
- 
-      name: 'Will they go with you?',
-    },
-   
-  ]
+  const  [Two,SetTwo]=useState([]);
+
+  const GetData = () => {
+    // var data = JSON.stringify({
+    //   Category: 'ThreeWords',
+    // });
+
+    var config = {
+      method: 'get',
+      url: `${Url.baseurl}Product/${'FiveSentence'}`,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        SetTwo(response.data)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  React.useEffect(() => {
+    GetData();
+  });
   return (
     <View
     style={{
@@ -86,7 +95,7 @@ export default function Sentencebetweenfiveword({navigation}) {
                   marginBottom: 10,
                 }}
                 onPress={() => {
-                  speakGreeting(item.name);
+                  speakGreeting(item.Name);
     
                 }}
               >
@@ -145,7 +154,7 @@ export default function Sentencebetweenfiveword({navigation}) {
                           color:  'black',
                         }}
                       >
-                        {item.name}
+                        {item.Name}
                       </Text>
                     </View>
 
