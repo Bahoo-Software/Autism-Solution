@@ -37,7 +37,7 @@ export default function Pronunciation({ navigation }) {
   };
   React.useEffect(() => {
     GetData();
-  });
+  },[]);
   
   return (
     <View

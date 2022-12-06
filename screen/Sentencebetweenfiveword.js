@@ -34,7 +34,7 @@ export default function Sentencebetweenfiveword({navigation}) {
   };
   React.useEffect(() => {
     GetData();
-  });
+  },[]);
   return (
     <View
     style={{
