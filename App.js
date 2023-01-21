@@ -16,12 +16,42 @@ import Pronunciation from './screen/Pronunciation';
 import Otp from './screen/Otp';
 import Vocalization from './screen/Vocalization';
 import Quz from './screen/Quz';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+// import { View } from 'react-native-web';
+import { ActivityIndicator,View } from 'react-native';
 const Stack = createNativeStackNavigator();
 function App() {
-  return (
+  const [initialRouteName,SetinitialRouteName]=React.useState('')
+  const [loader,setloader]=React.useState(true)
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('@User_status')
+      
+      if(value !== null) {
+        // value previously stored
+        SetinitialRouteName("Mainscreen")
+        setloader(false)
+      }
+      SetinitialRouteName("Onboarding")
+      setloader(false)
+
+    } catch(e) {
+      // error reading value
+    }
+  }
+
+  // AsyncStorage
+  React.useEffect(()=>{
+   getData()
+  },[])
+  return loader?(
+    <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+      <ActivityIndicator  size={"large"} color={"cyan"}  />
+    </View>
+  ):(
     <SafeAreaView style={{flex: 1}}>
-      <NavigationContainer>
-        <Stack.Navigator  screenOptions={{headerShown:false}}>
+      <NavigationContainer >
+        <Stack.Navigator initialRouteName={initialRouteName}  screenOptions={{headerShown:false}}>
           <Stack.Screen name="Onboarding" component={Onboarding} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Forget" component={Forget} />

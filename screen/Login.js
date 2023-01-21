@@ -6,6 +6,7 @@ import FormInput from '../Components/FormInput'
 import axios from 'axios'
 import LoginBtn from '../Components/Loginbtn'
 import Url from '../Url.json'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 const Login = ({ navigation }) => {
   const [username, setuserName] = React.useState()
   const [password, setPassword] = React.useState()
@@ -72,6 +73,7 @@ const Login = ({ navigation }) => {
     axios(config)
     .then(function (response) {
       if(response.data.status==true){
+        storeData()
         navigation.navigate("Mainscreen")
       }else{
         alert("Something went wrong")
@@ -82,6 +84,14 @@ const Login = ({ navigation }) => {
       console.log(error);
     });
     
+  }
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem('@User_status', "true")
+    } catch (e) {
+      // saving error
+      console.log(e);
+    }
   }
   return (
     <ScrollView>
