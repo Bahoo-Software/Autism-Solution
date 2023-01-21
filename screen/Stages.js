@@ -4,6 +4,21 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import StagesList from "../Components/StagesList";
 
 export default function Stages({ navigation }) {
+  const Stage = [
+    {
+      name: 'Pronunciation',
+      nav: 'Pronunciation',
+    },
+    {
+      name: 'Vocalization',
+      nav: 'Vocalization',
+    },
+
+    {
+      name: 'Sentences',
+      nav: 'Sentencebetweenfiveword',
+    },
+  ]
   return (
     <View
       style={{
@@ -65,7 +80,7 @@ export default function Stages({ navigation }) {
       >
         Stages Level
       </Text>
-      <StagesList navigation={navigation} />
+      <StagesList Stage={Stage}  navigation={navigation} />
 
     </View>
   )

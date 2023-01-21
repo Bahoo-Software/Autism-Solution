@@ -94,7 +94,7 @@ export default function Pronunciation({ navigation }) {
         renderItem={({ item, index }) => (
           <View>
             <Pressable onPress={() => {
-              speakGreeting(item.Name);
+              speakGreeting(item.Pronnous);
 
             }}>
               <View
@@ -124,7 +124,7 @@ export default function Pronunciation({ navigation }) {
                   style={{
                     width: '13%',
                     borderRadius: 8,
-                    borderColor: '#523275',
+                    borderColor: '#fff',
                     borderWidth: 1,
                     height: '80%',
                     justifyContent: 'center',
@@ -138,7 +138,7 @@ export default function Pronunciation({ navigation }) {
                       color: '#523275',
                     }}
                   >
-                    {item.PronunSymbol}
+                    {/* {item.PronunSymbol} */}
                   </Text>
                 </View>
 

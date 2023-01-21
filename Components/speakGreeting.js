@@ -4,8 +4,8 @@ const speakGreeting = (item) => {
     const greeting = `${item}`;
     const options = {
       voice: "com.apple.speech.synthesis.voice.Fred",
-      pitch: 1.5,
-      rate: 0.7,
+      pitch: 0,
+      rate: 0,
     };
     // Tts.speak('Hello, world!', {
     //   iosVoiceId: 'com.apple.ttsbundle.Moira-compact',
@@ -19,7 +19,8 @@ const speakGreeting = (item) => {
     //     KEY_PARAM_STREAM: 'STREAM_MUSIC',
     //   },
     // });
-    Tts.speak(greeting, options);
+    // Tts.speak(greeting, options);
+    Tts.speak(greeting, options)
   };
 
   export default speakGreeting;

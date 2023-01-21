@@ -1,29 +1,37 @@
 import { View, Text, FlatList, TouchableOpacity, Pressable } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
-const Stage = [
-  {
-    name: 'Pronunciation',
-    nav: 'Pronunciation',
-  },
-  {
-    name: 'Vocalization',
-    nav: 'Vocalization',
-  },
+// const Stage = [
+//   {
+//     name: 'Pronunciation',
+//     nav: 'Pronunciation',
+//   },
+//   {
+//     name: 'Vocalization',
+//     nav: 'Vocalization',
+//   },
   
-  {
-    name: 'Two Or three Words',
-    nav: 'Twothreeword',
-            // height:"100%"
-  },
-  {
-    name: 'Sentence between 5 words',
-    nav: 'Sentencebetweenfiveword',
-  },
-]
-const StagesList = ({ navigation }) => {
-  const [select, setSelect] = React.useState()
+//   {
+//     name: 'Two Or three Words',
+//     nav: 'Twothreeword',
+//             // height:"100%"
+//   },
+//   {
+//     name: 'Sentence between 5 words',
+//     nav: 'Sentencebetweenfiveword',
+//   },
+// ]
+const StagesList = ({ Stage, }) => {
+  const navigation=useNavigation()
+  // const {Stage}
+  const [select, setSelect] = React.useState('')
+  React.useEffect(()=>{
+    navigation.addListener('focus',()=>{
+      setSelect('')
+    })
+  },[])
   return (
     <View
       style={{

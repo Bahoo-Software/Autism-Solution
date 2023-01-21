@@ -157,7 +157,7 @@ data : data
 
 axios(config)
 .then(function (response) {
-  // console.log();
+  console.log(response.data);
   if(response.data.status==false){
     alert("Please Try To connect this email :muhammadshiraz492@gmail.com")
   }else{
