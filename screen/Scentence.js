@@ -1,3 +1,15 @@
+// import { View, Text } from 'react-native'
+// import React from 'react'
+
+// const Scentence = () => {
+//   return (
+//     <View>
+//       <Text>Scentence</Text>
+//     </View>
+//   )
+// }
+
+// export default Scentence
 // import {View, Text, Pressable, Image, FlatList, Dimensions} from 'react-native';
 // import React, {useState} from 'react';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -156,21 +168,21 @@ import React from 'react'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import StagesList from "../Components/StagesList";
 
-export default function Vocalization({ navigation }) {
+export default function Scentence({ navigation }) {
 
 const Stage = [
   {
-    name: 'Three letters',
-    nav: 'Twothreeword',
+    name: 'Two Words',
+    nav: 'TwoWords',
   },
   {
-    name: 'Four letters',
-    nav: 'Fourlatter',
+    name: 'Three Words',
+    nav: 'ThreeWords',
   },
   
   {
-    name: 'Greater then four letters',
-    nav: 'GreaterThenThreeLatter',
+    name: 'Greater Scentence',
+    nav: 'GreaterScentence',
             // height:"100%"
   },
  
@@ -187,24 +199,7 @@ const Stage = [
           height: '2%',
         }}
       />
-      <View
-        style={{
-          width: '100%',
-
-          paddingLeft: '3%',
-          height: 30,
-        }}
-      >
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <MaterialIcons
-            name="arrow-back-ios"
-            style={{
-              marginLeft: '3%',
-            }}
-            size={30}
-          />
-        </TouchableOpacity>
-      </View>
+     
       <View
         style={{
           height: 100,

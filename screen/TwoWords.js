@@ -1,3 +1,4 @@
+
 // import {View, Text, Pressable, FlatList, Image} from 'react-native';
 // import React, { useState } from 'react';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -5,7 +6,7 @@
 // // import * as Speech from "expo-speech";
 // import Url from '../Url.json';
 // import axios from 'axios';
-// export default function Twothreeword({navigation}) {
+// export default function TwoWords({navigation}) {
 //   const  [Two,SetTwo]=useState([]);
 //   const [currentindex,SetCurrentindex]=useState(1)
 //   const GetData = () => {
@@ -311,7 +312,7 @@ import axios from 'axios';
 import speakGreeting from '../Components/speakGreeting';
 import { useNavigation } from '@react-navigation/native';
 import Url from '../Url.json'
-const Twothreeword = () => {
+const TwoWords = () => {
   const Data1= [
   { id:0,img: "", title: "Empowering Artisans,\n Farmers & Micro Business" },
   {id:1, img: "", title: "Connecting NGOs, Social Enterprises with Communities" },
@@ -342,7 +343,7 @@ const GetData = () => {
 
   var config = {
     method: 'get',
-    url: `${Url.baseurl}Product/${'ThreeWords'}`,
+    url: `${Url.baseurl}Product/${'TwoWord'}`,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -583,7 +584,7 @@ React.useEffect(() => {
   )
 }
 
-export default Twothreeword
+export default TwoWords
 
 
 

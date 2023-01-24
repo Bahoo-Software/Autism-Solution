@@ -228,24 +228,7 @@ const Stage = [
           height: '2%',
         }}
       />
-      <View
-        style={{
-          width: '100%',
-
-          paddingLeft: '3%',
-          height: 30,
-        }}
-      >
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <MaterialIcons
-            name="arrow-back-ios"
-            style={{
-              marginLeft: '3%',
-            }}
-            size={30}
-          />
-        </TouchableOpacity>
-      </View>
+  
       <View
         style={{
           height: 100,

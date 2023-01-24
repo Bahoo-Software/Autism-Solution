@@ -16,21 +16,7 @@ const Quz = () => {
   const navigation = useNavigation();
   return (
     <View style={{flex: 1, paddingTop: 10, backgroundColor: '#fff'}}>
-      <View
-        style={{
-          width: '53%',
-          left: 10,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}>
-        <Pressable  
-           onPress={()=>navigation.goBack()}>
-          <Backbtn />
-        </Pressable>
-        <Text style={{fontSize: 20, fontWeight: 'bold', color: '#000000'}}>
-          Quiz
-        </Text>
-      </View>
+ 
       <View
         style={{alignItems: 'center', height: 300, justifyContent: 'flex-end'}}>
         <Image source={require('../assets/Apple.png')} />

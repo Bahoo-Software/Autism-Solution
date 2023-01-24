@@ -16,7 +16,7 @@ export default function Stages({ navigation }) {
 
     {
       name: 'Sentences',
-      nav: 'Sentencebetweenfiveword',
+      nav: 'Scentence',
     },
   ]
   return (

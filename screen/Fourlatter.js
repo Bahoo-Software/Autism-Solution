@@ -311,7 +311,7 @@ import axios from 'axios';
 import speakGreeting from '../Components/speakGreeting';
 import { useNavigation } from '@react-navigation/native';
 import Url from '../Url.json'
-const Twothreeword = () => {
+const Fourlatter = () => {
   const Data1= [
   { id:0,img: "", title: "Empowering Artisans,\n Farmers & Micro Business" },
   {id:1, img: "", title: "Connecting NGOs, Social Enterprises with Communities" },
@@ -342,7 +342,7 @@ const GetData = () => {
 
   var config = {
     method: 'get',
-    url: `${Url.baseurl}Product/${'ThreeWords'}`,
+    url: `${Url.baseurl}Product/${'Fourlatters'}`,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -395,7 +395,7 @@ React.useEffect(() => {
 
           renderItem={({ item,index }) => (
             <>
-            <View key={item.Name.toString()}    style={{  flex:1,alignItems: "center", padding: 20, justifyContent: "center", }}>
+            <View style={{  flex:1,alignItems: "center", padding: 20, justifyContent: "center", }}>
 
               <View style={{ marginTop: 30, width: 306, height: 334,  borderTopEndRadius: 20, borderTopLeftRadius: 20, alignSelf: "center", justifyContent: "center", alignItems: 'center' }}>
                 <View style={{ width: 285, height: 243, alignItems: 'center' }}>
@@ -583,7 +583,7 @@ React.useEffect(() => {
   )
 }
 
-export default Twothreeword
+export default Fourlatter
 
 
 

@@ -19,6 +19,12 @@ import Quz from './screen/Quz';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { View } from 'react-native-web';
 import { ActivityIndicator,View } from 'react-native';
+import Fourlatter from './screen/Fourlatter';
+import GreaterThenThreeLatter from './screen/GreaterThenThreeLatter';
+import TwoWords from './screen/TwoWords';
+import ThreeWords from './screen/ThreeWords';
+import Scentence from './screen/Scentence';
+import GreaterScentence from './screen/GreaterScentence';
 const Stack = createNativeStackNavigator();
 function App() {
   const [initialRouteName,SetinitialRouteName]=React.useState('')
@@ -51,23 +57,79 @@ function App() {
   ):(
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer >
-        <Stack.Navigator initialRouteName={initialRouteName}  screenOptions={{headerShown:false}}>
+        <Stack.Navigator initialRouteName={initialRouteName}  screenOptions={{headerShown:true}}>
           <Stack.Screen name="Onboarding" component={Onboarding} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Forget" component={Forget} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Otp" component={Otp} />
-          <Stack.Screen name="Mainscreen" component={Mainscreen} />
+          <Stack.Screen name="Mainscreen" component={Mainscreen}  options={{
+
+            headerShown:false
+          }}/>
           <Stack.Screen name="Guide" component={Guide} />
-          <Stack.Screen name="Stages" component={Stages} />
-          <Stack.Screen name="Pronunciation" component={Pronunciation} />
-          <Stack.Screen name="Twothreeword" component={Twothreeword} />
-          <Stack.Screen name="Sentencebetweenfiveword" component={Sentencebetweenfiveword} />
-          <Stack.Screen name="Vocalization" component={Vocalization} />          
+          <Stack.Screen name="Stages" component={Stages}  options={{
+
+headerShown:false
+}}/>
+          <Stack.Screen name="Pronunciation" component={Pronunciation} 
+          options={{
+
+            headerShown:false
+          }}
+          />
+          <Stack.Screen name="Twothreeword" component={Twothreeword}
+          options={{
+
+            // headerShown:false
+            title:"Three Latter's"
+          }}
+          
+          
+          />
+          <Stack.Screen name="Sentencebetweenfiveword" component={Sentencebetweenfiveword} 
+          options={{
+            title:"Scentence"
+          }}
+          
+          />
+          <Stack.Screen name="TwoWords" component={TwoWords} />
+          <Stack.Screen name="ThreeWords" component={ThreeWords} />
+          <Stack.Screen name="Scentence" component={Scentence} />
+          <Stack.Screen name="GreaterScentence" component={GreaterScentence} />
+          <Stack.Screen name="Vocalization" component={Vocalization}
+          
+          options={{
+
+            headerShown:false
+          }}
+          />          
           <Stack.Screen name="Quz" component={Quz} />          
+          <Stack.Screen name="Fourlatter" component={Fourlatter} 
+                options={{
+
+                  // headerShown:false
+                  title:"Four Latter's"
+                }}
+                
+          
+          />   
+           <Stack.Screen name="GreaterThenThreeLatter" component={GreaterThenThreeLatter} 
+                options={{
+
+                  // headerShown:false
+                  title:"Four Latter"
+                }}
+                
+          
+          />         
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
   );
 }
 export default App;
+
+
+
+    // "baseurl":"http://192.168.0.107:3000/"

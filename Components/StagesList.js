@@ -2,7 +2,6 @@ import { View, Text, FlatList, TouchableOpacity, Pressable } from 'react-native'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
-
 // const Stage = [
 //   {
 //     name: 'Pronunciation',
@@ -12,7 +11,6 @@ import { useNavigation } from '@react-navigation/native'
 //     name: 'Vocalization',
 //     nav: 'Vocalization',
 //   },
-  
 //   {
 //     name: 'Two Or three Words',
 //     nav: 'Twothreeword',
@@ -48,12 +46,13 @@ const StagesList = ({ Stage, }) => {
       >
         <FlatList
           data={Stage}
+          keyExtractor={(item, index) => String(index)}
           style={{
             width: '100%',
             height: '100%',
           }}
           renderItem={({ item, index }) => (
-            <View>
+            <View  key={index.toString()}>
               <Pressable
                 style={{
                   marginBottom: 10,
@@ -146,5 +145,4 @@ const StagesList = ({ Stage, }) => {
     </View>
   )
 }
-
 export default StagesList

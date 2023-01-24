@@ -1,0 +1,22 @@
+[
+    {
+        "Category": "ThreeWords",
+        "Name": "Apple",
+        "__v": 0,
+        "_id": "63c990a782a4e65aadc240dd"
+    },
+    {
+        "Category": "ThreeWords",
+        "Name": "cry",
+        "VocalImage": "Upload/Sat Jan 21 2023 19:29:06 GMT+0500 (Pakistan Standard Time)download.jpeg",
+        "__v": 0,
+        "_id": "63cbf6b20a136117e9ddc78f"
+    },
+    {
+        "Category": "ThreeWords",
+        "Name": "cry",
+        "VocalImage": "Upload/Sat Jan 21 2023 19:29:36 GMT+0500 (Pakistan Standard Time)download.jpeg",
+        "__v": 0,
+        "_id": "63cbf6d09971eb0c709685e3"
+    }
+]
