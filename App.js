@@ -22,10 +22,11 @@ import { ActivityIndicator,View } from 'react-native';
 import Fourlatter from './screen/Fourlatter';
 import GreaterThenThreeLatter from './screen/GreaterThenThreeLatter';
 import TwoWords from './screen/TwoWords';
-// import ThreeWords from './screen/ThreeLatter';
+import ThreeWords from './screen/ThreeLatter';
 import Scentence from './screen/Scentence';
 import GreaterScentence from './screen/GreaterScentence';
 import Threelatters from './screen/ThreeLatter';
+import ThreeWord from './screen/ThreeWord';
 const Stack = createNativeStackNavigator();
 function App() {
   const [initialRouteName,SetinitialRouteName]=React.useState('')
@@ -102,6 +103,13 @@ headerShown:false
                 title:"Three Letter's"
               }}
           />
+           <Stack.Screen name="ThreeWord" component={ThreeWord}
+              options={{
+
+                // headerShown:false
+                title:"Three Words"
+              }}
+          />
           <Stack.Screen name="Scentence" component={Scentence} />
           <Stack.Screen name="GreaterScentence" component={GreaterScentence} />
           <Stack.Screen name="Vocalization" component={Vocalization}
@@ -116,7 +124,7 @@ headerShown:false
                 options={{
 
                   // headerShown:false
-                  title:"Four Latter's"
+                  title:"Four Letter's"
                 }}
                 
           

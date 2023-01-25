@@ -177,7 +177,7 @@ const Stage = [
   },
   {
     name: 'Three Words',
-    nav: 'ThreeWords',
+    nav: 'ThreeWord',
   },
   
   {

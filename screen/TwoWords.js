@@ -307,7 +307,7 @@
 
 // export default Onboarding
 import React, { useCallback, useState,useRef } from 'react'
-import { View, Text, FlatList, Dimensions, Pressable, Image,ActivityIndicator } from 'react-native'
+import { View, Text, FlatList, Dimensions, Pressable, Image,ActivityIndicator ,Alert} from 'react-native'
 import axios from 'axios';
 import speakGreeting from '../Components/speakGreeting';
 import { useNavigation } from '@react-navigation/native';
@@ -493,7 +493,9 @@ React.useEffect(() => {
               // speakGreeting
               // speakGreeting(item.Name);
               if(Data.length-1==currentindex){
-                alert("This is the last index")
+                // alert("This is the last index")
+                Alert.alert("Two Word","Your Pratice is Completed")
+
               }else{
                 SetCurrentindex(currentindex+1)
               }

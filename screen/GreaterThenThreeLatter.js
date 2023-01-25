@@ -1,6 +1,6 @@
 
 import React, { useCallback, useState,useRef } from 'react'
-import { View, Text, FlatList, Dimensions, Pressable, Image,ActivityIndicator } from 'react-native'
+import { View, Text, FlatList, Dimensions, Pressable, Image,ActivityIndicator,Alert } from 'react-native'
 import axios from 'axios';
 import speakGreeting from '../Components/speakGreeting';
 import { useNavigation } from '@react-navigation/native';
@@ -36,7 +36,7 @@ const GetData = () => {
 
   var config = {
     method: 'get',
-    url: `${Url.baseurl}Product/${'GreaterThenThreeLatter'}`,
+    url: `${Url.baseurl}Product/${'GreaterThenThreeLetter'}`,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -132,8 +132,8 @@ React.useEffect(() => {
                   style={{
                     width: '13%',
                     borderRadius: 8,
-                    borderColor: '#fff',
-                    borderWidth: 1,
+                    // borderColor: '#fff',
+                    // borderWidth: 1,
                     height: '80%',
                     justifyContent: 'center',
 
@@ -149,15 +149,17 @@ React.useEffect(() => {
                     {/* {item.PronunSymbol} */}
                   </Text>
                 </View>
+              <View style={{width:"80%"}}>
 
                 <Text
                   style={{
                     fontSize: 14,
                     color: '#000000',
                   }}
-                >
+                  >
                   {item.Name}
                 </Text>
+                  </View>
                 {/* <Speaker/> */}
                 <View
                   style={{
@@ -186,7 +188,8 @@ React.useEffect(() => {
               // speakGreeting
               // speakGreeting(item.Name);
               if(Data.length-1==currentindex){
-                alert("This is the last index")
+                // alert("This is the last index")
+                Alert.alert("Scentence","Your Pratice is Completed")
               }else{
                 SetCurrentindex(currentindex+1)
               }

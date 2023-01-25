@@ -1,3 +1,4 @@
+
 // import {View, Text, Pressable, FlatList, Image} from 'react-native';
 // import React, { useState } from 'react';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -5,7 +6,7 @@
 // // import * as Speech from "expo-speech";
 // import Url from '../Url.json';
 // import axios from 'axios';
-// export default function Twothreeword({navigation}) {
+// export default function ThreeWord({navigation}) {
 //   const  [Two,SetTwo]=useState([]);
 //   const [currentindex,SetCurrentindex]=useState(1)
 //   const GetData = () => {
@@ -306,12 +307,12 @@
 
 // export default Onboarding
 import React, { useCallback, useState,useRef } from 'react'
-import { View, Text, FlatList, Dimensions, Pressable, Image,ActivityIndicator,Alert } from 'react-native'
+import { View, Text, FlatList, Dimensions, Pressable, Image,ActivityIndicator ,Alert} from 'react-native'
 import axios from 'axios';
 import speakGreeting from '../Components/speakGreeting';
 import { useNavigation } from '@react-navigation/native';
 import Url from '../Url.json'
-const Fourlatter = () => {
+const ThreeWord = () => {
   const Data1= [
   { id:0,img: "", title: "Empowering Artisans,\n Farmers & Micro Business" },
   {id:1, img: "", title: "Connecting NGOs, Social Enterprises with Communities" },
@@ -342,7 +343,7 @@ const GetData = () => {
 
   var config = {
     method: 'get',
-    url: `${Url.baseurl}Product/${'Fourletters'}`,
+    url: `${Url.baseurl}Product/${'ThreeWord'}`,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -395,7 +396,7 @@ React.useEffect(() => {
 
           renderItem={({ item,index }) => (
             <>
-            <View style={{  flex:1,alignItems: "center", padding: 20, justifyContent: "center", }}>
+            <View key={item.Name.toString()}    style={{  flex:1,alignItems: "center", padding: 20, justifyContent: "center", }}>
 
               <View style={{ marginTop: 30, width: 306, height: 334,  borderTopEndRadius: 20, borderTopLeftRadius: 20, alignSelf: "center", justifyContent: "center", alignItems: 'center' }}>
                 <View style={{ width: 285, height: 243, alignItems: 'center' }}>
@@ -493,7 +494,8 @@ React.useEffect(() => {
               // speakGreeting(item.Name);
               if(Data.length-1==currentindex){
                 // alert("This is the last index")
-                Alert.alert("Four Latter","Your Pratice is Completed")
+                Alert.alert("Two Word","Your Pratice is Completed")
+
               }else{
                 SetCurrentindex(currentindex+1)
               }
@@ -584,7 +586,7 @@ React.useEffect(() => {
   )
 }
 
-export default Fourlatter
+export default ThreeWord
 
 
 
