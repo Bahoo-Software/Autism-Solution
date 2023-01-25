@@ -1,12 +1,13 @@
 
 
 import React, { useCallback, useState,useRef } from 'react'
-import { View, Text, FlatList, Dimensions, Pressable, Image,ActivityIndicator } from 'react-native'
+import { View, Text, FlatList, Dimensions, Pressable, Image,ActivityIndicator, Alert } from 'react-native'
 import axios from 'axios';
 import speakGreeting from '../Components/speakGreeting';
 import { useNavigation } from '@react-navigation/native';
 import Url from '../Url.json'
-const ThreeWords = () => {
+import NotFound from './Components/NotFound';
+const Threelatters = () => {
   const Data1= [
   { id:0,img: "", title: "Empowering Artisans,\n Farmers & Micro Business" },
   {id:1, img: "", title: "Connecting NGOs, Social Enterprises with Communities" },
@@ -27,17 +28,17 @@ const Ref=useRef(null)
 
 // const navigation=useNavigation()
 // var data = JSON.stringify({
-//   "Category": "ThreeWords"
+//   "Category": "Threelatters"
 // });
 
 const GetData = () => {
   // var data = JSON.stringify({
-  //   Category: 'ThreeWords',
+  //   Category: 'Threelatters',
   // });
 
   var config = {
     method: 'get',
-    url: `${Url.baseurl}Product/${'ThreeWord'}`,
+    url: `${Url.baseurl}Product/${'Threelatters'}`,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -59,12 +60,12 @@ React.useEffect(() => {
     GetData()
 
   })
-  loader?null:  
+  loader?null:Data.length!=0?  
   
   Ref.current.scrollToIndex({
     animated: true,
     index: currentindex ,
-  });
+  }):null
 }, [currentindex]);
   return loader?(
  
@@ -74,6 +75,8 @@ React.useEffect(() => {
 
   ):(
         <View style={{ position: "absolute", height: '100%', width: "100%", justifyContent: "center" }}>
+       {Data.length!=0?
+
         <FlatList
           data={Data}
           ref={Ref}
@@ -187,7 +190,8 @@ React.useEffect(() => {
               // speakGreeting
               // speakGreeting(item.Name);
               if(Data.length-1==currentindex){
-                alert("This is the last index")
+                // alert("This is the last index")
+                Alert.alert("Three letters","Today Pratice is Completed")
               }else{
                 SetCurrentindex(currentindex+1)
               }
@@ -272,13 +276,14 @@ React.useEffect(() => {
               </>
           )}
         />
-
+:<NotFound />
+                  }
        
         </View>
   )
 }
 
-export default ThreeWords
+export default Threelatters
 
 
 

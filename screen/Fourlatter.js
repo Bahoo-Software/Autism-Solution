@@ -492,7 +492,8 @@ React.useEffect(() => {
               // speakGreeting
               // speakGreeting(item.Name);
               if(Data.length-1==currentindex){
-                alert("This is the last index")
+                // alert("This is the last index")
+                Alert.alert("Four Latter","Your test is Completed")
               }else{
                 SetCurrentindex(currentindex+1)
               }

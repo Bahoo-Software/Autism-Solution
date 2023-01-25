@@ -79,12 +79,15 @@ export default function Pronunciation({ navigation }) {
           style={{
             fontSize: 18,
             fontWeight: 'bold',
+            color:"black"
           }}
         >
           Pronunciation
         </Text>
       </View>
-      <FlatList
+     {Punctua.length!=0?
+
+    <FlatList
         data={Punctua}
         style={{
           width: '100%',
@@ -94,7 +97,7 @@ export default function Pronunciation({ navigation }) {
         renderItem={({ item, index }) => (
           <View>
             <Pressable onPress={() => {
-              speakGreeting(item.Pronnous);
+              speakGreeting(item.Name);
 
             }}>
               <View
@@ -173,7 +176,12 @@ export default function Pronunciation({ navigation }) {
             </Pressable>
           </View>
         )}
-      />
+      />:
+      <View  style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+        <Text  style={{color:"red",fontSize:20}}> No practice at this time</Text>
+        </View>
+
+    }
     </View>
   )
 }

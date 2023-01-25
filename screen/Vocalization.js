@@ -161,7 +161,7 @@ export default function Vocalization({ navigation }) {
 const Stage = [
   {
     name: 'Three letters',
-    nav: 'Twothreeword',
+    nav: 'Threelatters',
   },
   {
     name: 'Four letters',

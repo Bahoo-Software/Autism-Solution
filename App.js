@@ -22,9 +22,10 @@ import { ActivityIndicator,View } from 'react-native';
 import Fourlatter from './screen/Fourlatter';
 import GreaterThenThreeLatter from './screen/GreaterThenThreeLatter';
 import TwoWords from './screen/TwoWords';
-import ThreeWords from './screen/ThreeWords';
+// import ThreeWords from './screen/ThreeLatter';
 import Scentence from './screen/Scentence';
 import GreaterScentence from './screen/GreaterScentence';
+import Threelatters from './screen/ThreeLatter';
 const Stack = createNativeStackNavigator();
 function App() {
   const [initialRouteName,SetinitialRouteName]=React.useState('')
@@ -94,7 +95,13 @@ headerShown:false
           
           />
           <Stack.Screen name="TwoWords" component={TwoWords} />
-          <Stack.Screen name="ThreeWords" component={ThreeWords} />
+          <Stack.Screen name="Threelatters" component={Threelatters}
+              options={{
+
+                // headerShown:false
+                title:"Three Letter's"
+              }}
+          />
           <Stack.Screen name="Scentence" component={Scentence} />
           <Stack.Screen name="GreaterScentence" component={GreaterScentence} />
           <Stack.Screen name="Vocalization" component={Vocalization}
@@ -132,4 +139,4 @@ export default App;
 
 
 
-    // "baseurl":"http://192.168.0.107:3000/"
+    // 
