@@ -194,6 +194,7 @@ const Login = ({ navigation }) => {
           placeholder="Password"
         />
         <TouchableOpacity
+        disabled={true}
           style={{
             height: 20,
             width: '85%',
@@ -215,7 +216,7 @@ const Login = ({ navigation }) => {
                 right: 0,
               }}
             >
-              Forgot password?
+              {/* Forgot password? */}
             </Text>
           </View>
         </TouchableOpacity>

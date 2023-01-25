@@ -316,7 +316,7 @@ React.useEffect(() => {
               // speakGreeting(item.Name);
               if(Data.length-1==currentindex){
                 // alert("This is the last index")
-                Alert.alert("Two Word","Your Pratice is Completed")
+                Alert.alert("Quz","Your Quz Completed")
 
               }else{
                 SetCurrentindex(currentindex+1)
