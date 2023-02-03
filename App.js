@@ -27,6 +27,8 @@ import Scentence from './screen/Scentence';
 import GreaterScentence from './screen/GreaterScentence';
 import Threelatters from './screen/ThreeLatter';
 import ThreeWord from './screen/ThreeWord';
+import OptionalQuz from './screen/OptionalQuz';
+import SpechQuz from './screen/SpechQuz';
 const Stack = createNativeStackNavigator();
 function App() {
   const [initialRouteName,SetinitialRouteName]=React.useState('')
@@ -112,6 +114,8 @@ headerShown:false
           />
           <Stack.Screen name="Scentence" component={Scentence} />
           <Stack.Screen name="GreaterScentence" component={GreaterScentence} />
+          <Stack.Screen name="OptionalQuz" component={OptionalQuz} />
+          <Stack.Screen name="SpechQuz" component={SpechQuz} />
           <Stack.Screen name="Vocalization" component={Vocalization}
           
           options={{
