@@ -20,7 +20,7 @@ const SpechQuz = () => {
     const [currentindex, SetCurrentindex] = useState(0)
     const keyExactor = useCallback((index) => index.toString())
     const [loader, Setloader] = useState(true)
-    // let [tempData,SetempData]=useState();
+    
 
     let tempData = [];
 
@@ -69,7 +69,7 @@ const SpechQuz = () => {
         else {
             alert("your Voice is not recongize")
         }
-        // console.log('speech result handler', e);
+
     };
 
     const startRecording = async () => {
@@ -92,9 +92,7 @@ const SpechQuz = () => {
         Voice.stop();
     };
     const GetData = () => {
-        // var data = JSON.stringify({
-        //   Category: 'Quzs',
-        // });
+
 
         var config = {
             method: 'get',
