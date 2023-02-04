@@ -100,7 +100,7 @@ const Login = ({ navigation }) => {
     <View
       style={{
         // flex: 1,
-        height:765, 
+        height:665, 
         backgroundColor: '#fff',
       }}
     >

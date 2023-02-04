@@ -40,17 +40,7 @@ const Signup = ({navigation}) => {
         flex: 1,
         backgroundColor: 'white',
       }}>
-      <View
-        style={{
-          marginTop: 10,
-          width: '90%',
-          height: 30,
-          alignSelf: 'center',
-        }}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <MaterialIcons name="arrow-back-ios" size={30} />
-        </TouchableOpacity>
-      </View>
+    
       <View
         style={{
           width: '100%',

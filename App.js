@@ -29,6 +29,9 @@ import Threelatters from './screen/ThreeLatter';
 import ThreeWord from './screen/ThreeWord';
 import OptionalQuz from './screen/OptionalQuz';
 import SpechQuz from './screen/SpechQuz';
+// import { store } from './app/store'
+import { Provider } from 'react-redux'
+import { store } from './Redux/store';
 const Stack = createNativeStackNavigator();
 function App() {
   const [initialRouteName,SetinitialRouteName]=React.useState('')
@@ -60,6 +63,7 @@ function App() {
     </View>
   ):(
     <SafeAreaView style={{flex: 1}}>
+     <Provider store={store}>
       <NavigationContainer >
         <Stack.Navigator initialRouteName={initialRouteName}  screenOptions={{headerShown:true}}>
           <Stack.Screen name="Onboarding" component={Onboarding} />
@@ -144,7 +148,9 @@ headerShown:false
           />         
         </Stack.Navigator>
       </NavigationContainer>
+    </Provider>
     </SafeAreaView>
+
   );
 }
 export default App;
